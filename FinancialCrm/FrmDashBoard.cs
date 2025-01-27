@@ -91,5 +91,33 @@ namespace FinancialCrm
             }
 
         }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            FrmAdmin frmAdmin = new FrmAdmin();
+            frmAdmin.Show();
+            this.Close();
+        }
+
+        private void btnCategories_Click(object sender, EventArgs e)
+        {
+            FrmCategories frmCategories = new FrmCategories();
+            frmCategories.Show();
+            this.Hide();
+        }
+
+        private void btnSpending_Click(object sender, EventArgs e)
+        {
+            FrmSpending frmSpending = new FrmSpending();
+            frmSpending.Show();
+            this.Hide();
+        }
+
+        private void btnBankProcesses_Click(object sender, EventArgs e)
+        {
+            FrmBankProcesses frmBankProcesses = new FrmBankProcesses();
+            frmBankProcesses.Show();
+            this.Hide();
+        }
     }
 }
