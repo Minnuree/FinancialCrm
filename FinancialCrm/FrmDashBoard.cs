@@ -51,7 +51,7 @@ namespace FinancialCrm
             chart2.Series.Clear();
 
             var series2 = chart2.Series.Add("Faturalar");
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.FastLine;
             foreach (var item in billData)
             {
                 series2.Points.AddXY(item.BillTitle, item.BillAmount);
@@ -117,6 +117,27 @@ namespace FinancialCrm
         {
             FrmBankProcesses frmBankProcesses = new FrmBankProcesses();
             frmBankProcesses.Show();
+            this.Hide();
+        }
+
+        private void btnBanks_Click(object sender, EventArgs e)
+        {
+            FrmBanks frmBanks = new FrmBanks();
+            frmBanks.Show();
+            this.Hide();
+        }
+
+        private void btnBills_Click(object sender, EventArgs e)
+        {
+            FrmBilling frmBilling = new FrmBilling();
+            frmBilling.Show();
+            this.Hide();
+        }
+
+        private void btnStatistics_Click(object sender, EventArgs e)
+        {
+            FrmStatistics frmStatistics = new FrmStatistics();
+            frmStatistics.Show();
             this.Hide();
         }
     }

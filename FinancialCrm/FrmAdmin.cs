@@ -21,7 +21,7 @@ namespace FinancialCrm
         FinancialCrmDbEntities db = new FinancialCrmDbEntities();
         private void FrmAdmin_Load(object sender, EventArgs e)
         {
-            
+            txtPassword.PasswordChar = '*';
         }
 
         private void btnEnter_Click(object sender, EventArgs e)
@@ -39,6 +39,18 @@ namespace FinancialCrm
             else
             {
                 MessageBox.Show("Yanlış Kullanıcı Adı Veya Şifre");
+            }
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked)
+            {
+                txtPassword.PasswordChar = '\0';
+            }
+            else
+            {
+                txtPassword.PasswordChar = '*';
             }
         }
     }

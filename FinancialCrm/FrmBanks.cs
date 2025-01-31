@@ -58,6 +58,8 @@ namespace FinancialCrm
         private void btnCategories_Click(object sender, EventArgs e)
         {
             FrmCategories frmCategories = new FrmCategories();
+            frmCategories.Show();
+            this.Hide();
         }
 
         private void btnSpending_Click(object sender, EventArgs e)
