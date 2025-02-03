@@ -46,13 +46,14 @@
             this.txtSpendingId = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnCategories = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
+            this.btnExit = new System.Windows.Forms.Button();
             this.btnDasboard = new System.Windows.Forms.Button();
             this.btnBankProcesses = new System.Windows.Forms.Button();
             this.btnSpending = new System.Windows.Forms.Button();
             this.btnBills = new System.Windows.Forms.Button();
             this.btnBanksForm = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnStatistics = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -260,18 +261,19 @@
             this.btnCategories.UseVisualStyleBackColor = false;
             this.btnCategories.Click += new System.EventHandler(this.btnCategories_Click);
             // 
-            // button7
+            // btnExit
             // 
-            this.button7.BackColor = System.Drawing.Color.Transparent;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button7.ForeColor = System.Drawing.Color.White;
-            this.button7.Location = new System.Drawing.Point(29, 296);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(139, 38);
-            this.button7.TabIndex = 4;
-            this.button7.Text = "Çıkış Yap";
-            this.button7.UseVisualStyleBackColor = false;
+            this.btnExit.BackColor = System.Drawing.Color.Transparent;
+            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExit.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnExit.ForeColor = System.Drawing.Color.White;
+            this.btnExit.Location = new System.Drawing.Point(29, 340);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(139, 38);
+            this.btnExit.TabIndex = 4;
+            this.btnExit.Text = "Çıkış Yap";
+            this.btnExit.UseVisualStyleBackColor = false;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // btnDasboard
             // 
@@ -279,7 +281,7 @@
             this.btnDasboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDasboard.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnDasboard.ForeColor = System.Drawing.Color.White;
-            this.btnDasboard.Location = new System.Drawing.Point(29, 252);
+            this.btnDasboard.Location = new System.Drawing.Point(29, 296);
             this.btnDasboard.Name = "btnDasboard";
             this.btnDasboard.Size = new System.Drawing.Size(139, 38);
             this.btnDasboard.TabIndex = 6;
@@ -346,7 +348,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(84)))), ((int)(((byte)(128)))));
-            this.panel1.Controls.Add(this.button7);
+            this.panel1.Controls.Add(this.btnStatistics);
+            this.panel1.Controls.Add(this.btnExit);
             this.panel1.Controls.Add(this.btnDasboard);
             this.panel1.Controls.Add(this.btnBankProcesses);
             this.panel1.Controls.Add(this.btnSpending);
@@ -357,6 +360,20 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(200, 502);
             this.panel1.TabIndex = 4;
+            // 
+            // btnStatistics
+            // 
+            this.btnStatistics.BackColor = System.Drawing.Color.Transparent;
+            this.btnStatistics.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnStatistics.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnStatistics.ForeColor = System.Drawing.Color.White;
+            this.btnStatistics.Location = new System.Drawing.Point(29, 252);
+            this.btnStatistics.Name = "btnStatistics";
+            this.btnStatistics.Size = new System.Drawing.Size(139, 38);
+            this.btnStatistics.TabIndex = 8;
+            this.btnStatistics.Text = "İstatistikler";
+            this.btnStatistics.UseVisualStyleBackColor = false;
+            this.btnStatistics.Click += new System.EventHandler(this.btnStatistics_Click);
             // 
             // FrmSpending
             // 
@@ -397,7 +414,7 @@
         private System.Windows.Forms.TextBox txtSpendingId;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnCategories;
-        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Button btnDasboard;
         private System.Windows.Forms.Button btnBankProcesses;
         private System.Windows.Forms.Button btnSpending;
@@ -407,5 +424,6 @@
         private System.Windows.Forms.ComboBox cmCategory;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DateTimePicker SpendingDate;
+        private System.Windows.Forms.Button btnStatistics;
     }
 }

@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.Entity;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -57,20 +58,12 @@ namespace FinancialCrm
 
             // Chart3 Kodları
             
-            var spendingCategories = db.Spendings.Select(x => new
-            {
-                x.Categories.CategoryName,
-                x.SpendingAmount
-            }).ToList();
-
-
-
             var spendgroup = db.Spendings
-              .GroupBy(p => p.Categories.CategoryName)
-             .Select(g => new
+              .GroupBy(x => x.Categories.CategoryName)
+             .Select(y => new
     {
-                 CategoryName = g.Key,
-                 SpendingAmount = g.Sum(p => p.SpendingAmount)
+                 CategoryName = y.Key,
+                 SpendingAmount = y.Sum(x => x.SpendingAmount)
     })
     .ToList();
 
@@ -91,8 +84,97 @@ namespace FinancialCrm
 
             // Chart4 Kodları
 
+            var spendingMonthSum = db.BankProcesses
+                .GroupBy(x => new { x.ProcessDate.Value.Year, x.ProcessDate.Value.Month })  // Yıla ve aya göre grupla
+                .Select(y => new
+                {
+                    processYear = y.Key.Year,
+                    processMonth = y.Key.Month,
+                    Amount = y.Sum(x=>x.Amount)
+
+                })
+                .AsEnumerable() // **SQL'den sonucu aldıktan sonra işleme devam et**
+                .Select(y => new
+                {
+                   y.processYear,
+                   y.processMonth,
+                    monthName = new DateTime(y.processYear, y.processMonth, 1).ToString("MMMM", new CultureInfo("tr-TR")), // Türkçe ay adı // **Bellekte işle**
+                    y.Amount
+                })
+                .OrderBy(y => y.processYear).ThenBy(y => y.processMonth) // Kronolojik sıralama
+                .ToList();
 
 
+
+
+            /*  .OrderBy(y => y.processYear).ThenBy(y => y.processMonth) // Kronolojik sıralama
+                 .ToList(); */
+
+
+            
+
+            
+            chart4.Series.Clear();
+            var series4 = chart4.Series.Add("Tutar");
+            series4.ChartType = SeriesChartType.Pyramid;
+
+            
+            foreach (var item in spendingMonthSum)
+            {
+
+               series4.Points.AddXY(item.monthName, item.Amount);
+            }
+
+
+        }
+
+        private void btnDasboard_Click(object sender, EventArgs e)
+        {
+            FrmDashboard frmDashboard = new FrmDashboard();
+            frmDashboard.Show();
+            this.Hide();
+        }
+
+        private void btnBankProcesses_Click(object sender, EventArgs e)
+        {
+            FrmBankProcesses frmBankProcesses = new FrmBankProcesses();
+            frmBankProcesses.Show();
+            this.Hide();
+        }
+
+        private void btnSpending_Click(object sender, EventArgs e)
+        {
+            FrmSpending frmSpending = new FrmSpending();
+            frmSpending.Show();
+            this.Hide();
+        }
+
+        private void btnBills_Click(object sender, EventArgs e)
+        {
+            FrmBilling frmBilling = new FrmBilling();
+            frmBilling.Show();
+            this.Hide();
+        }
+
+        private void btnBanks_Click(object sender, EventArgs e)
+        {
+            FrmBanks frmBanks = new FrmBanks();
+            frmBanks.Show();
+            this.Hide();
+        }
+
+        private void btnCategories_Click(object sender, EventArgs e)
+        {
+            FrmCategories frmCategories = new FrmCategories();
+            frmCategories.Show();
+            this.Hide();
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            FrmAdmin frmAdmin = new FrmAdmin();
+            frmAdmin.Show();
+            this.Close();
         }
     }
 }

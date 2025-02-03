@@ -47,6 +47,7 @@
             this.btnBills = new System.Windows.Forms.Button();
             this.btnBanks = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnStatistics = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -200,12 +201,13 @@
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExit.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnExit.ForeColor = System.Drawing.Color.White;
-            this.btnExit.Location = new System.Drawing.Point(29, 296);
+            this.btnExit.Location = new System.Drawing.Point(29, 341);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(139, 38);
             this.btnExit.TabIndex = 4;
             this.btnExit.Text = "Çıkış Yap";
             this.btnExit.UseVisualStyleBackColor = false;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // btnDasboard
             // 
@@ -213,7 +215,7 @@
             this.btnDasboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDasboard.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnDasboard.ForeColor = System.Drawing.Color.White;
-            this.btnDasboard.Location = new System.Drawing.Point(29, 252);
+            this.btnDasboard.Location = new System.Drawing.Point(29, 297);
             this.btnDasboard.Name = "btnDasboard";
             this.btnDasboard.Size = new System.Drawing.Size(139, 38);
             this.btnDasboard.TabIndex = 6;
@@ -280,6 +282,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(84)))), ((int)(((byte)(128)))));
+            this.panel1.Controls.Add(this.btnStatistics);
             this.panel1.Controls.Add(this.btnExit);
             this.panel1.Controls.Add(this.btnDasboard);
             this.panel1.Controls.Add(this.btnBankProcesses);
@@ -291,6 +294,20 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(200, 477);
             this.panel1.TabIndex = 4;
+            // 
+            // btnStatistics
+            // 
+            this.btnStatistics.BackColor = System.Drawing.Color.Transparent;
+            this.btnStatistics.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnStatistics.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnStatistics.ForeColor = System.Drawing.Color.White;
+            this.btnStatistics.Location = new System.Drawing.Point(29, 252);
+            this.btnStatistics.Name = "btnStatistics";
+            this.btnStatistics.Size = new System.Drawing.Size(139, 38);
+            this.btnStatistics.TabIndex = 9;
+            this.btnStatistics.Text = "İstatistikler";
+            this.btnStatistics.UseVisualStyleBackColor = false;
+            this.btnStatistics.Click += new System.EventHandler(this.btnStatistics_Click);
             // 
             // FrmCategories
             // 
@@ -335,5 +352,6 @@
         private System.Windows.Forms.Button btnBills;
         private System.Windows.Forms.Button btnBanks;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btnStatistics;
     }
 }

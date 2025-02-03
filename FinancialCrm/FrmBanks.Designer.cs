@@ -53,6 +53,7 @@
             this.lblBankProcess3 = new System.Windows.Forms.Label();
             this.lblBankProcess2 = new System.Windows.Forms.Label();
             this.lblBankProcess1 = new System.Windows.Forms.Label();
+            this.btnStatistics = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -64,6 +65,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(84)))), ((int)(((byte)(128)))));
+            this.panel1.Controls.Add(this.btnStatistics);
             this.panel1.Controls.Add(this.btnExit);
             this.panel1.Controls.Add(this.btnDashboard);
             this.panel1.Controls.Add(this.btnBankProcesses);
@@ -82,12 +84,13 @@
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExit.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnExit.ForeColor = System.Drawing.Color.White;
-            this.btnExit.Location = new System.Drawing.Point(29, 286);
+            this.btnExit.Location = new System.Drawing.Point(29, 330);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(139, 38);
             this.btnExit.TabIndex = 4;
             this.btnExit.Text = "Çıkış Yap";
             this.btnExit.UseVisualStyleBackColor = false;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // btnDashboard
             // 
@@ -95,7 +98,7 @@
             this.btnDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDashboard.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnDashboard.ForeColor = System.Drawing.Color.White;
-            this.btnDashboard.Location = new System.Drawing.Point(29, 242);
+            this.btnDashboard.Location = new System.Drawing.Point(29, 286);
             this.btnDashboard.Name = "btnDashboard";
             this.btnDashboard.Size = new System.Drawing.Size(139, 38);
             this.btnDashboard.TabIndex = 6;
@@ -354,6 +357,20 @@
             this.lblBankProcess1.TabIndex = 0;
             this.lblBankProcess1.Text = "Metin 1";
             // 
+            // btnStatistics
+            // 
+            this.btnStatistics.BackColor = System.Drawing.Color.Transparent;
+            this.btnStatistics.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnStatistics.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnStatistics.ForeColor = System.Drawing.Color.White;
+            this.btnStatistics.Location = new System.Drawing.Point(29, 242);
+            this.btnStatistics.Name = "btnStatistics";
+            this.btnStatistics.Size = new System.Drawing.Size(139, 38);
+            this.btnStatistics.TabIndex = 9;
+            this.btnStatistics.Text = "İstatistikler";
+            this.btnStatistics.UseVisualStyleBackColor = false;
+            this.btnStatistics.Click += new System.EventHandler(this.btnStatistics_Click);
+            // 
             // FrmBanks
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -413,5 +430,6 @@
         private System.Windows.Forms.Label lblBankProcess4;
         private System.Windows.Forms.Label lblBankProcess3;
         private System.Windows.Forms.Label lblBankProcess2;
+        private System.Windows.Forms.Button btnStatistics;
     }
 }
